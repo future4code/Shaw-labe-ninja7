@@ -1,9 +1,9 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import { paginaInicial } from './components/paginaInicial'
 
 function App() {
 	return (
-        <AppContainer />
+        <paginaInicial />
 	)
 }
 
