@@ -1,10 +1,21 @@
-import React from 'react'
-import { paginaInicial } from './components/paginaInicial'
+import React from "react";
+import  PaginaInicial  from "./components/PaginaIncial";
+// importando o link base da api e a autorização
+import {linkApi} from './constants/Constantes'
+import {aut} from './constants/Constantes'
+import Cadastro from "./components/Cadastro";
 
-function App() {
-	return (
-        <paginaInicial />
-	)
+export default class extends React.Component{
+
+	render(){
+
+		// utilizando o link base e a autorização
+		console.log(linkApi)
+		console.log(aut)
+		return(
+			<div>
+			 <Cadastro />
+			</div>
+		)
+	}
 }
-
-export default App
