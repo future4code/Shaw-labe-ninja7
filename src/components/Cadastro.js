@@ -1,5 +1,43 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Container = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #145a80;
+
+
+
+`
+
+const Box = styled.div`
+display: flex;
+height: 50%;
+width: 30%;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border: 1px solid black;
+background-color:#122335;
+
+input{
+    width: 50%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+select{
+    margin-bottom: 20px;
+}
+
+h2{
+    color: white;
+}
+
+`
 
 export default class Cadastro extends React.Component {
 
@@ -17,7 +55,7 @@ criaTrabalho = ()=>{
     const body = {
         title: this.state.titulo,
         description: this.state.descricao,
-        price: this.state.preço,
+        price: Number(this.state.preço),
         paymentMethods: this.state.formasDePagamento,
         dueDate: this.state.data
 
@@ -34,7 +72,7 @@ criaTrabalho = ()=>{
     })
     .catch((err) =>{
         alert("Erro ao cadastrar, tente novamente")
-        // console.log(err.res)
+        
     })
   }
 
@@ -59,44 +97,36 @@ criaTrabalho = ()=>{
   }
 
 
-  handlePaymentMethods = (e) => {
+  formaPagamento = (e) => {
     let value = Array.from(e.target.selectedOptions, option => option.value)
     this.setState({ formasDePagamento: value })
 }
 
-//   onClickCriar = () =>{
-//       this.criaTrabalho()
-//   }
 
-//   formaPagamento = (ev) =>{
-//     const pagamento = []
-//     pagamento.push(ev.target.value)
-//     this.setState({formasDePagamento: pagamento})
-//   }
   render() {
     return (
-      <div>
+      <Container>
             
-      <div>
+      <Box>
+       <h2>Cadastre seu Serviço</h2>
        <input placeholder="Título" onChange={this.onChangeTitulo} value={this.state.titulo}></input>  
        <input placeholder=" Descrição" onChange={this.onChangeDescricao} value={this.state.descricao}></input>
+       
        <input placeholder="Preço" type="number"  onChange={this.onChangePreco} value={this.state.preço}></input>  
-       <select multiple value={this.state.formasDePagamento} onChange={this.handlePaymentMethods}>
+       <select multiple value={this.state.formasDePagamento} onChange={this.formaPagamento}>
             <option>Cartão de Crédito</option>
            <option>Cartão de Débito</option>
            <option>Paypal</option>
            <option>Boleto</option>
            <option>Pix</option> 
 
-           {/* <option>
-               {this.state.formasDePagamento[0]}
-           </option> */}
+           
        </select>  
         <input placeholder="Prazo do serviço" type="date" onChange={this.onChangeData} value={this.state.data}></input> 
         <button onClick={this.criaTrabalho} >Cadastrar</button>
-     </div> 
+     </Box> 
       
- </div>
+ </Container>
     )
   }
 }
