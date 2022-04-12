@@ -4,6 +4,8 @@ import  PaginaInicial  from "./components/PaginaIncial";
 import {linkApi} from './constants/Constantes'
 import {aut} from './constants/Constantes'
 import Cadastro from "./components/Cadastro";
+import Servicos from "./components/Servicos";
+import Card from "./components/Card";
 
 export default class extends React.Component{
 
@@ -14,7 +16,7 @@ export default class extends React.Component{
 		console.log(aut)
 		return(
 			<div>
-			 <Cadastro />
+			 <Servicos />
 			</div>
 		)
 	}
