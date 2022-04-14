@@ -7,8 +7,10 @@ import Cadastro from "./components/Cadastro";
 import Servicos from "./components/Servicos";
 import Card from "./components/Card";
 
+
 export default class extends React.Component{
 
+	
 	render(){
 
 		// utilizando o link base e a autorização
@@ -16,7 +18,7 @@ export default class extends React.Component{
 		console.log(aut)
 		return(
 			<div>
-			 <Servicos />
+			 <Servicos/>
 			</div>
 		)
 	}
