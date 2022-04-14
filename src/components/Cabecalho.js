@@ -4,7 +4,11 @@ export default class Cabecalho extends React.Component {
   render() {
     return (
         <div>
-          Header
+        
+        <h1>labeNinjas</h1>
+        <button onClick={()=>this.props.trocar("home")}>Home</button>
+        <button onClick={()=>this.props.trocar("carrinho")}>Carrinho</button>
+     
         </div>
     )
   }

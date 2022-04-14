@@ -6,8 +6,8 @@ export default class PaginaInicial extends React.Component {
       <div>
       <header>
         <h1>labeNinjas</h1>
-        <button>Home</button>
-        <button>Carrinho</button>
+        <button onClick={()=>this.props.trocar("home")}>Home</button>
+        <button onClick={()=>this.props.trocar("carrinho")}>Carrinho</button>
       </header>
 
       <main>
