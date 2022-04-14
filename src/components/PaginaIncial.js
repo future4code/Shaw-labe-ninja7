@@ -6,14 +6,14 @@ export default class PaginaInicial extends React.Component {
       <div>
       <header>
         <h1>labeNinjas</h1>
-        <button>Home</button>
-        <button>Carrinho</button>
+        <button onClick={this.props.irParaHome}>Home</button>
+        <button onClick={this.props.irParaCarrinho}>Carrinho</button>
       </header>
 
       <main>
         <h3>O talento certo no momento certo</h3>
-        <button>Quero ser um ninja</button>
-        <button>Contratar um ninja</button>
+        <button onClick={this.props.irParaCadastro}>Quero ser um ninja</button>
+        <button onClick={this.props.irParaServicos}>Contratar um serviço</button>
         </main>
 
         <footer></footer>

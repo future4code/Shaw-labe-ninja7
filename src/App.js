@@ -1,22 +1,54 @@
 import React from "react";
 import  PaginaInicial  from "./components/PaginaIncial";
 // importando o link base da api e a autorização
-import {linkApi} from './constants/Constantes'
-import {aut} from './constants/Constantes'
+import {linkApi} from './constants/Constantes';
+import {aut} from './constants/Constantes';
 import Cadastro from "./components/Cadastro";
 import Servicos from "./components/Servicos";
+import Carrinho from "./components/Carrinho";
 import Card from "./components/Card";
+import { ThemeProvider } from "react-jss"
 
 export default class extends React.Component{
 
-	render(){
+	state = {
+		telaAtual: ""
+	}
+	escolheTela = () =>{
+		switch(this.state.telaAtual){
+			case "cadastro":
+				return <Cadastro irParaCadastro={this.irParaCadastro}/>
+			case "servicos":
+				return <Servicos irParaServicos={this.irParaServicos}/>
+			case "carrinho":
+				return <Carrinho irParaCarrinho={this.irParaCarrinho}/>
+			case "home":
+				return <PaginaInicial irParaHome={this.irParaHome}/>
+			default: 
+			return <PaginaInicial irParaHome={this.irParaHome}  irParaCarrinho={this.irParaCarrinho} irParaCadastro={this.irParaCadastro} irParaServicos={this.irParaServicos}/>
+		}
+	}
+	irParaCadastro = () =>{
+		this.setState({telaAtual: "cadastro"})
+	}
 
-		// utilizando o link base e a autorização
-		console.log(linkApi)
-		console.log(aut)
+	irParaServicos = () =>{
+		this.setState({telaAtual: "servicos"})
+	}
+
+	irParaCarrinho = () =>{
+		this.setState({telaAtual: "carrinho"})
+	}
+
+	irParaHome = () =>{
+		this.setState({telaAtual: "home"})
+	}
+
+	
+	render(){	
 		return(
 			<div>
-			 <Servicos />
+			 {this.escolheTela()}
 			</div>
 		)
 	}
