@@ -6,6 +6,7 @@ import {aut} from './constants/Constantes'
 import Cadastro from "./components/Cadastro";
 import Servicos from "./components/Servicos";
 import Card from "./components/Card";
+import CarrinhoPage from "./components/CarrinhoPage";
 
 export default class extends React.Component{
 
@@ -16,7 +17,9 @@ export default class extends React.Component{
 		console.log(aut)
 		return(
 			<div>
+			 <PaginaInicial/>
 			 <Servicos />
+			 <CarrinhoPage/>
 			</div>
 		)
 	}
