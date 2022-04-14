@@ -1,6 +1,5 @@
 import React from "react";
 import  PaginaInicial  from "./components/PaginaIncial";
-// importando o link base da api e a autorização
 import {linkApi} from './constants/Constantes'
 import {aut} from './constants/Constantes'
 import Cadastro from "./components/Cadastro";
@@ -8,6 +7,7 @@ import Servicos from "./components/Servicos";
 import Card from "./components/Card";
 import CarrinhoPage from "./components/CarrinhoPage";
 import DetalhesDoServico from './components/DetalhesDoServico'
+import Cabecalho from "./components/Cabecalho";
 
 export default class extends React.Component{
 
@@ -23,7 +23,7 @@ export default class extends React.Component{
 
 	render(){
 
-		console.log(this.state.paginaAtual)
+		// fazendo a troca das paginas
 
 		let pagina 
 
@@ -50,6 +50,7 @@ export default class extends React.Component{
 		
 		return(
 			<div>
+				<Cabecalho trocar={this.trocaTela}/>
 				{pagina}
 			</div>
 		)
