@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
+import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right, TextsHomePage } from "./styled";
 import styled from "styled-components";
+import Button from '@material-ui/core/Button';
 
 export default class Cadastro extends React.Component {
   state = {
@@ -73,8 +74,11 @@ export default class Cadastro extends React.Component {
           </Logo>
 
           <Tags>
-            <h3>Cadastre seu serviço</h3>
-            <h3>Página Inicial</h3>
+            <Button onClick={() => this.props.trocaTela("inicial")}>Página Inicial</Button>
+            <Button onClick={() => this.props.trocaTela("cadastro")}>Cadastre seu serviço</Button>
+            <Button onClick={() => this.props.trocaTela("serviço")}>Serviço</Button>
+            <Button onClick={() => this.props.trocaTela("carrinho")}>Carrinho</Button>
+            
           </Tags>
         </Header>
 

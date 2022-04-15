@@ -7,7 +7,7 @@ import Servicos from "./components/Servicos";
 import Card from "./components/Card";
 import CarrinhoPage from "./components/CarrinhoPage";
 import DetalhesDoServico from './components/DetalhesDoServico'
-import Cabecalho from "./components/Cabecalho";
+
 
 export default class extends React.Component{
 
@@ -32,16 +32,16 @@ export default class extends React.Component{
 				pagina = <PaginaInicial trocar={this.trocaTela}/>
 				break;
 			case "cadastro" :
-				pagina = <Cadastro />
+				pagina = <Cadastro trocaTela={this.trocaTela} />
 				break;
 			case "carrinho" :
-				pagina = <CarrinhoPage />
+				pagina = <CarrinhoPage trocaTela={this.trocaTela} />
 				break;
 			case "detalhes" :
 				pagina = <DetalhesDoServico />
 				break;
-			case "servicos" :
-				pagina = <Servicos />
+			case "serviços" :
+				pagina = <Servicos trocaTela={this.trocaTela}/>
 				break;
 			default:
 				pagina = <PaginaInicial trocar={this.trocaTela}/>
@@ -50,7 +50,7 @@ export default class extends React.Component{
 		
 		return(
 			<div>
-				<Cabecalho trocar={this.trocaTela}/>
+				<header trocar={this.trocaTela}/>
 				{pagina}
 			</div>
 		)

@@ -13,6 +13,7 @@ grid-template-rows: 12vh 88vh;
  justify-content: center;
  align-items: center;
  grid-template-columns: 50vw 50vw;
+ margin-top: 30px;
  
 
  `
@@ -25,8 +26,10 @@ justify-content: center;
 display: flex;
 
 
+
+
  img{
-   height: 100px;
+   height: 90px;
    width: 110px;
    
    
@@ -36,10 +39,16 @@ display: flex;
 
 `
 
+export const GridBoxServices = styled.div`
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   margin-top: 30px;
+`
+
 export const Tags = styled.div`
-grid-column: 3/4;
+grid-column: 2/4;
 display: flex;
-justify-content: center;
+justify-content: flex-end;
 align-items: center;
 color: white;
 
@@ -55,7 +64,7 @@ h3{
 `
 
 export const Header = styled.div`
-
+height: 100px;
 grid-row: 1/2;
 display: grid;
 grid-template-columns: 15vw 55vw 30vw;
@@ -164,7 +173,14 @@ background-image: linear-gradient(180deg, #7fdeff, #eabaf6 );
  justify-content: center;
  
  `
+
+ export const TextsHomePage = styled.div`
+   margin-top: 60px;
+ `
  
+export const BarraDePesquisa = styled.div`
+   margin-top: 40px;
+`
 
  
 
