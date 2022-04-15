@@ -1,5 +1,6 @@
 import React from 'react'
 import CarrinhoCard from './CarrinhoCard'
+import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
 
 class CarrinhoPage extends React.Component {
 
@@ -13,6 +14,18 @@ class CarrinhoPage extends React.Component {
           />
       })
           return (
+            <Contaneir>
+      <Header>
+        <Logo>
+            <img src="https://i.ibb.co/XStqr9q/Logotipo-Geom-trico-Cosm-ticos-1-removebg-preview.png"/>
+        </Logo>
+
+        <Tags>
+          <h3>Cadastre seu serviço</h3>
+          <h3>Página Inicial</h3>
+        </Tags>
+      </Header>
+      
                 <div>
                     <h2>Carrinho</h2>
                     <div>
@@ -22,6 +35,7 @@ class CarrinhoPage extends React.Component {
                         Valor Total: R$ {this.props.valorTotal}
                     </p>
                 </div>
+                </Contaneir>
             )
     }    
   }

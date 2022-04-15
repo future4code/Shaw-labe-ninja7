@@ -3,6 +3,7 @@ import Card from './Card'
 import axios from 'axios'
 import {linkApi} from '../constants/Constantes'
 import { aut } from '../constants/Constantes'
+import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
 
 export default class Servicos extends React.Component {
 
@@ -85,10 +86,20 @@ export default class Servicos extends React.Component {
     
 
     return (
+      <Contaneir>
+      <Header>
+        <Logo>
+            <img src="https://i.ibb.co/XStqr9q/Logotipo-Geom-trico-Cosm-ticos-1-removebg-preview.png"/>
+        </Logo>
+
+        <Tags>
+          <h3>Cadastre seu serviço</h3>
+          <h3>Página Inicial</h3>
+        </Tags>
+      </Header>
+      
         <div>
          
-          
-
           <select
             value={this.state.ordenacao}
             onChange={this.trocarOrdenacao}
@@ -101,6 +112,7 @@ export default class Servicos extends React.Component {
 
           {listaDosProdutos}
         </div>
+        </Contaneir>
     )
   }
 }

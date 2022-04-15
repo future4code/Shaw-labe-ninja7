@@ -4,6 +4,7 @@ import  Cards from './Card'
 export class CarrinhoCard extends React.Component {
     render() {
         return (
+            
             <Cards>
                 <p>{this.props.quantidade}</p>
                 <p>{this.props.titulo}</p>
