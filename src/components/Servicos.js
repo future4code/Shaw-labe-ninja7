@@ -3,7 +3,8 @@ import Card from './Card'
 import axios from 'axios'
 import {linkApi} from '../constants/Constantes'
 import { aut } from '../constants/Constantes'
-import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
+import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right, GridBoxServices, BarraDePesquisa } from "./styled";
+import Button from '@material-ui/core/Button';
 
 export default class Servicos extends React.Component {
 
@@ -81,9 +82,6 @@ export default class Servicos extends React.Component {
     const listaDosProdutos = this.state.servicos.map((elemento)=>{
        return <Card titulo={elemento.title} preco={elemento.price} data={elemento.dueDate} />
     })
-    
-    
-    
 
     return (
       <Contaneir>
@@ -93,12 +91,16 @@ export default class Servicos extends React.Component {
         </Logo>
 
         <Tags>
-          <h3>Cadastre seu serviço</h3>
-          <h3>Página Inicial</h3>
+            <Button onClick={() => this.props.trocaTela("inicial")}>Página Inicial</Button>
+            <Button onClick={() => this.props.trocaTela("cadastro")}>Cadastre seu serviço</Button>
+            <Button onClick={() => this.props.trocaTela("serviço")}>Serviço</Button>
+            <Button onClick={() => this.props.trocaTela("carrinho")}>Carrinho</Button>
+            
         </Tags>
       </Header>
       
-        <div>
+        <BarraDePesquisa>
+         
          
           <select
             value={this.state.ordenacao}
@@ -109,9 +111,12 @@ export default class Servicos extends React.Component {
             <option value="precodec">Preço Decrescente</option>
             <option value="prazo">Prazo</option>
           </select>
+          
 
-          {listaDosProdutos}
-        </div>
+          <GridBoxServices>
+            {listaDosProdutos}
+          </GridBoxServices>
+        </BarraDePesquisa>
         </Contaneir>
     )
   }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
+import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right, TextsHomePage } from "./styled";
+import Button from '@material-ui/core/Button';
 
 
 
@@ -13,21 +14,24 @@ export default class PaginaInicial extends React.Component {
         </Logo>
 
         <Tags>
-          <h3>Cadastre seu serviço</h3>
-          <h3>Página Inicial</h3>
+            <Button onClick={() => this.props.trocar("inicial")}>Página Inicial</Button>
+            <Button  onClick={() => this.props.trocar("cadastro")}>Cadastre seu serviço</Button>
+            <Button onClick={() => this.props.trocar("serviços")}>serviços</Button>
+            <Button onClick={() => this.props.trocar("carrinho")}>Carrinho</Button>
+            
         </Tags>
       </Header>
       
 
-      <div>
+      <TextsHomePage>
         <h3>O talento certo no momento certo</h3>
         <button 
         onClick= {()=>this.props.trocar("cadastro")}
         >Cadastre seu serviço</button>
         <button
-        onClick= {()=>this.props.trocar("servicos")}
+        onClick= {()=>this.props.trocar("serviços")}
         >Contratar um serviço</button>
-        </div>
+      </TextsHomePage>
     
     </Contaneir>
     )

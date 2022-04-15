@@ -1,6 +1,7 @@
 import React from 'react'
 import CarrinhoCard from './CarrinhoCard'
 import { Box, Header, Contaneir, Main, Logo, Tags, Left,Fotodescricao,Descricao, Right } from "./styled";
+import Button from '@material-ui/core/Button';
 
 class CarrinhoPage extends React.Component {
 
@@ -21,8 +22,11 @@ class CarrinhoPage extends React.Component {
         </Logo>
 
         <Tags>
-          <h3>Cadastre seu serviço</h3>
-          <h3>Página Inicial</h3>
+            <Button onClick={() => this.props.trocaTela("inicial")}>Página Inicial</Button>
+            <Button onClick={() => this.props.trocaTela("cadastro")}>Cadastre seu serviço</Button>
+            <Button onClick={() => this.props.trocaTela("serviços")}>Serviços</Button>
+            <Button onClick={() => this.props.trocaTela("carrinho")}>Carrinho</Button>
+            
         </Tags>
       </Header>
       
@@ -30,7 +34,7 @@ class CarrinhoPage extends React.Component {
                     <h2>Carrinho</h2>
                     <div>
                         {itensDoCarrinho}
-                    </div>
+                    </div>  
                     <p>
                         Valor Total: R$ {this.props.valorTotal}
                     </p>

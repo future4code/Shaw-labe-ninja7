@@ -19,7 +19,7 @@ export default class Card extends React.Component{
         return(
             <Cards>
                 <h3>{this.props.titulo}</h3>
-                <p>{this.props.preco}</p>
+                <p>{this.props.preço}</p>
                 <p>{this.props.data}</p>
                 <button>Add Carrinho</button> 
                 <button>Detalhes</button>   
